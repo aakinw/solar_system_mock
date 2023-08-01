@@ -1,0 +1,28 @@
+[gd_scene load_steps=9 format=3 uid="uid://c5xc4hrmdx3ab"]
+
+[ext_resource type="PackedScene" uid="uid://bejfsym7if81x" path="res://Support/Mercury_Orbit.blend" id="1_0y2pr"]
+[ext_resource type="PackedScene" uid="uid://n87rba5tuptb" path="res://Support/Venus_Orbit.blend" id="2_s5cyi"]
+[ext_resource type="PackedScene" uid="uid://cwqm28gakvnqt" path="res://Support/Earth_Orbit.blend" id="3_q6ubj"]
+[ext_resource type="PackedScene" uid="uid://c75fg23h7lhox" path="res://Support/Mars_Orbit.blend" id="4_c22h7"]
+[ext_resource type="PackedScene" uid="uid://civ23b7bce6im" path="res://Support/Jupiter_Orbit.blend" id="5_xlc7p"]
+[ext_resource type="PackedScene" uid="uid://deqicb4nvxu1v" path="res://Support/Saturn_Orbit.blend" id="6_aipf6"]
+[ext_resource type="PackedScene" uid="uid://h23hjl8r7c33" path="res://Support/Uranus_Orbit.blend" id="7_plbei"]
+[ext_resource type="PackedScene" uid="uid://dbflgwadiwp42" path="res://Support/Neptune_Orbit.blend" id="8_pkgbk"]
+
+[node name="Orbits" type="Node3D"]
+
+[node name="Mercury_Orbit" parent="." instance=ExtResource("1_0y2pr")]
+
+[node name="Venus_Orbit" parent="." instance=ExtResource("2_s5cyi")]
+
+[node name="Earth_Orbit" parent="." instance=ExtResource("3_q6ubj")]
+
+[node name="Mars_Orbit" parent="." instance=ExtResource("4_c22h7")]
+
+[node name="Jupiter_Orbit" parent="." instance=ExtResource("5_xlc7p")]
+
+[node name="Saturn_Orbit" parent="." instance=ExtResource("6_aipf6")]
+
+[node name="Uranus_Orbit" parent="." instance=ExtResource("7_plbei")]
+
+[node name="Neptune_Orbit" parent="." instance=ExtResource("8_pkgbk")]

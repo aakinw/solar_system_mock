@@ -1,0 +1,51 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://360_F_264279006_WDXxV3OHjAOoHqH7iiLDrg23p0947g7U.jpg" type="Texture2D" id=1]
+[ext_resource path="res://Fonts/ChakraPetch-Regular.ttf" type="FontFile" id=2]
+[ext_resource path="res://Themes/SelectMenuTheme.tres" type="Theme" id=3]
+
+[sub_resource type="FontFile" id=3]
+size = 40
+font_data = ExtResource( 2 )
+
+[sub_resource type="FontFile" id=4]
+size = 40
+font_data = ExtResource( 2 )
+
+[node name="SelectMenu" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_right = 1024.0
+offset_bottom = 600.0
+texture = ExtResource( 1 )
+expand = true
+
+[node name="CenterContainerButton" type="CenterContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 2.0
+offset_bottom = 2.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainerButton"]
+offset_left = 355.0
+offset_top = 220.0
+offset_right = 669.0
+offset_bottom = 380.0
+theme_override_constants/separation = 42
+
+[node name="FreeRoamButton" type="Button" parent="CenterContainerButton/VBoxContainer"]
+offset_right = 314.0
+offset_bottom = 59.0
+theme = ExtResource( 3 )
+theme_override_fonts/font = SubResource( 3 )
+text = "Free Roam Mode"
+
+[node name="DiagramButton" type="Button" parent="CenterContainerButton/VBoxContainer"]
+offset_top = 101.0
+offset_right = 314.0
+offset_bottom = 160.0
+theme = ExtResource( 3 )
+theme_override_fonts/font = SubResource( 4 )
+text = "Diagram Mode"

@@ -1,0 +1,56 @@
+[gd_scene load_steps=14 format=3 uid="uid://2qaf2gagfskw"]
+
+[ext_resource type="PackedScene" uid="uid://d3wihg5p7pka" path="res://Scenes/Earth.tscn" id="1"]
+[ext_resource type="PackedScene" path="res://Scenes/Mercury.tscn" id="2"]
+[ext_resource type="Script" path="res://Scripts/Diagram.gd" id="3"]
+[ext_resource type="PackedScene" path="res://Scenes/User.tscn" id="4"]
+[ext_resource type="PackedScene" path="res://Scenes/Venus.tscn" id="5"]
+[ext_resource type="PackedScene" path="res://Scenes/Saturn.tscn" id="6"]
+[ext_resource type="PackedScene" path="res://Scenes/Uranus.tscn" id="7"]
+[ext_resource type="PackedScene" path="res://Scenes/Jupiter.tscn" id="8"]
+[ext_resource type="PackedScene" uid="uid://b1vbyl7r8fvrr" path="res://Scenes/Sun.tscn" id="9"]
+[ext_resource type="PackedScene" path="res://Scenes/Mars.tscn" id="10"]
+[ext_resource type="PackedScene" path="res://Scenes/Neptune.tscn" id="11"]
+[ext_resource type="PackedScene" uid="uid://gt2vfmaf63yt" path="res://Scenes/PlanetMenu.tscn" id="12"]
+[ext_resource type="PackedScene" uid="uid://bs5ccqcuuoyjd" path="res://Scenes/Settings.tscn" id="13"]
+
+[node name="Diagram" type="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.77831, 1.21584, 1.17618)
+script = ExtResource("3")
+
+[node name="User" parent="." instance=ExtResource("4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 500, 0, -4.17233e-06)
+
+[node name="Sun" parent="." instance=ExtResource("9")]
+
+[node name="Mercury" parent="." instance=ExtResource("2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 530, 0, 0)
+
+[node name="Venus" parent="." instance=ExtResource("5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 567, 0, 0)
+
+[node name="Earth" parent="." instance=ExtResource("1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 595, 0, 0)
+
+[node name="Mars" parent="." instance=ExtResource("10")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 655, 0, 0)
+
+[node name="Jupiter" parent="." instance=ExtResource("8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 961, 0, 0)
+
+[node name="Saturn" parent="." instance=ExtResource("6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1409, 0, 0)
+
+[node name="Uranus" parent="." instance=ExtResource("7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2325, 0, 0)
+
+[node name="Neptune" parent="." instance=ExtResource("11")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3279, 0, 0)
+
+[node name="PlanetMenu" parent="." instance=ExtResource("12")]
+
+[node name="Settings" parent="." instance=ExtResource("13")]
+
+[node name="Sunlight" type="OmniLight3D" parent="."]
+light_energy = 3.202
+omni_range = 4000.0

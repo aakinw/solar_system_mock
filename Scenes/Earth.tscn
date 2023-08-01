@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://dlfkx4tvx80b"]
+
+[ext_resource type="Script" path="res://Scripts/Earth.gd" id="1"]
+[ext_resource type="PackedScene" uid="uid://dq2of51vejk7g" path="res://3D Assets/earth/scene.gltf" id="1_7finl"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_yfosm"]
+radius = 13.0
+
+[node name="Earth" type="CharacterBody3D"]
+script = ExtResource("1")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("SphereShape3D_yfosm")
+
+[node name="scene" parent="." instance=ExtResource("1_7finl")]
+transform = Transform3D(0.135, 0, 0, 0, 0.135, 0, 0, 0, 0.135, 0, 0, 0)

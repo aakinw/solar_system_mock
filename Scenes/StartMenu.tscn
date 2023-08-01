@@ -1,0 +1,62 @@
+[gd_scene load_steps=8 format=3 uid="uid://ddpkawb5gctnm"]
+
+[ext_resource type="Texture2D" uid="uid://boqv88uk5wfmp" path="res://624927.jpg" id="1"]
+[ext_resource type="FontFile" uid="uid://byfj353bahk0m" path="res://Fonts/ChakraPetch-Regular.ttf" id="2"]
+[ext_resource type="Script" path="res://Scripts/StartButton.gd" id="4"]
+[ext_resource type="AudioStream" uid="uid://bjqyapqbsmfmu" path="res://Audio/level-passed-142971.mp3" id="5"]
+[ext_resource type="Script" path="res://Scripts/StartLabel.gd" id="6"]
+
+[sub_resource type="FontFile" id="1"]
+fallbacks = Array[Font]([ExtResource("2")])
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+cache/0/16/0/kerning_overrides/16/0 = Vector2(0, 0)
+
+[sub_resource type="LabelSettings" id="LabelSettings_08djj"]
+font = ExtResource("2")
+font_size = 29
+
+[node name="StartMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+texture = ExtResource("1")
+expand_mode = 1
+
+[node name="StartLabel" type="Label" parent="."]
+layout_mode = 0
+offset_left = 962.0
+offset_top = 528.0
+offset_right = 1052.0
+offset_bottom = 569.0
+theme_override_fonts/font = SubResource("1")
+text = "START"
+label_settings = SubResource("LabelSettings_08djj")
+script = ExtResource("6")
+fade = true
+
+[node name="StartButton" type="Button" parent="."]
+modulate = Color(0.780392, 0.0627451, 0.0627451, 0)
+layout_mode = 0
+offset_left = 948.0
+offset_top = 524.0
+offset_right = 1066.0
+offset_bottom = 576.0
+script = ExtResource("4")
+
+[node name="StartConfirm" type="AudioStreamPlayer2D" parent="StartButton"]
+position = Vector2(-802, -486)
+stream = ExtResource("5")
+
+[connection signal="pressed" from="StartButton" to="." method="_on_StartButton_pressed"]

@@ -1,0 +1,405 @@
+[gd_scene load_steps=31 format=3 uid="uid://gt2vfmaf63yt"]
+
+[ext_resource type="FontFile" uid="uid://byfj353bahk0m" path="res://Fonts/ChakraPetch-Regular.ttf" id="1"]
+[ext_resource type="Theme" uid="uid://tym637vehaid" path="res://Themes/P_Menu.tres" id="2"]
+[ext_resource type="Texture2D" uid="uid://b8id3okjwximx" path="res://2D Assets/mercury_i.png" id="3"]
+[ext_resource type="Texture2D" uid="uid://8ljl6leuxomx" path="res://2D Assets/venus_i.png" id="4"]
+[ext_resource type="Script" path="res://Scripts/Reset_Sun.gd" id="4_7jwe4"]
+[ext_resource type="Texture2D" uid="uid://een52qjuqdwx" path="res://2D Assets/earth_i.png" id="5"]
+[ext_resource type="Texture2D" uid="uid://bklpv8e88n8su" path="res://2D Assets/mars_i.png" id="6"]
+[ext_resource type="Texture2D" uid="uid://d3bi5qi1yplq8" path="res://2D Assets/jupiter_i.png" id="7"]
+[ext_resource type="Texture2D" uid="uid://hqqet4b2u007" path="res://2D Assets/saturn_i.png" id="8"]
+[ext_resource type="Texture2D" uid="uid://bqg8pj7a6yuml" path="res://2D Assets/uranus_i.png" id="9"]
+[ext_resource type="Texture2D" uid="uid://wkag0a52muod" path="res://2D Assets/neptune_i.png" id="10"]
+[ext_resource type="Script" path="res://Scripts/PlanetMenu.gd" id="11"]
+[ext_resource type="Script" path="res://Scripts/Merucry_Button.gd" id="13_cf51m"]
+[ext_resource type="Script" path="res://Scripts/Venus_Button.gd" id="14_058qo"]
+[ext_resource type="Script" path="res://Scripts/Earth_Button.gd" id="15_rf1ne"]
+[ext_resource type="Script" path="res://Scripts/Mars_Button.gd" id="16_7e12p"]
+[ext_resource type="Script" path="res://Scripts/Jupiter_Button.gd" id="17_xxmyl"]
+[ext_resource type="Script" path="res://Scripts/Saturn_Button.gd" id="18_6y874"]
+[ext_resource type="Script" path="res://Scripts/Uranus_Button.gd" id="19_fvi6b"]
+[ext_resource type="Script" path="res://Scripts/Neptune_Button.gd" id="20_gg6qn"]
+
+[sub_resource type="FontFile" id="1"]
+subpixel_positioning = 0
+msdf_pixel_range = 14
+msdf_size = 128
+fallbacks = Array[Font]([ExtResource("1"), ExtResource("1")])
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+cache/0/16/0/kerning_overrides/16/0 = Vector2(0, 0)
+
+[sub_resource type="LabelSettings" id="LabelSettings_7cbdw"]
+font = ExtResource("1")
+font_size = 23
+
+[sub_resource type="StyleBoxFlat" id="2"]
+bg_color = Color(0.129412, 0.129412, 0.129412, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+
+[sub_resource type="StyleBoxFlat" id="3"]
+bg_color = Color(0.109804, 0.109804, 0.109804, 0)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+
+[sub_resource type="StyleBoxFlat" id="5"]
+bg_color = Color(0.0705882, 0.0705882, 0.0705882, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+
+[sub_resource type="Theme" id="4"]
+Button/styles/hover = SubResource("2")
+Button/styles/normal = SubResource("3")
+Button/styles/pressed = SubResource("5")
+
+[sub_resource type="Animation" id="Animation_smls3"]
+resource_name = "Panel_Rev"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Panel:size")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(576, 648), Vector2(0, 648)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Panel/CenterContainer:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1e-05, 1e-05)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Panel/Reset_Sun:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1e-05, 1e-05)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Panel/Planets:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_6lucu"]
+resource_name = "Panel_Slide"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Panel:size")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 648), Vector2(576, 648)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Panel/CenterContainer:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1e-05, 1e-05), Vector2(1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Panel/Reset_Sun:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1e-05, 1e-05), Vector2(1, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Panel/Planets:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.5, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_dvfk7"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Panel:size")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(576, 648)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Panel/CenterContainer:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1e-05, 1e-05)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Panel/Reset_Sun:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1e-05, 1e-05)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Panel/Planets:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ia4om"]
+_data = {
+"Panel_Rev": SubResource("Animation_smls3"),
+"Panel_Slide": SubResource("Animation_6lucu"),
+"RESET": SubResource("Animation_dvfk7")
+}
+
+[node name="PlanetMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("11")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 0
+offset_right = 576.0
+offset_bottom = 648.0
+theme = ExtResource("2")
+
+[node name="CenterContainer" type="CenterContainer" parent="Panel"]
+layout_mode = 0
+offset_right = 576.0
+offset_bottom = 64.0
+scale = Vector2(1e-05, 1e-05)
+
+[node name="Label" type="Label" parent="Panel/CenterContainer"]
+layout_mode = 2
+theme_override_fonts/font = SubResource("1")
+text = "Click On A Planet To Focus In"
+label_settings = SubResource("LabelSettings_7cbdw")
+
+[node name="Reset_Sun" type="Button" parent="Panel"]
+layout_mode = 0
+offset_left = 232.0
+offset_top = 552.0
+offset_right = 348.0
+offset_bottom = 608.0
+scale = Vector2(1e-05, 1e-05)
+theme = SubResource("4")
+text = "Reset To Sun"
+script = ExtResource("4_7jwe4")
+
+[node name="Planets" type="Node2D" parent="Panel"]
+modulate = Color(1, 1, 1, 0)
+
+[node name="Mercury" type="Sprite2D" parent="Panel/Planets"]
+position = Vector2(87, 158)
+scale = Vector2(0.17, 0.17)
+texture = ExtResource("3")
+
+[node name="Venus" type="Sprite2D" parent="Panel/Planets"]
+position = Vector2(285, 158)
+scale = Vector2(0.193, 0.193)
+texture = ExtResource("4")
+
+[node name="Earth" type="Sprite2D" parent="Panel/Planets"]
+position = Vector2(470, 158)
+scale = Vector2(0.193089, 0.193359)
+texture = ExtResource("5")
+
+[node name="Mars" type="Sprite2D" parent="Panel/Planets"]
+position = Vector2(188, 287)
+scale = Vector2(0.22, 0.22)
+texture = ExtResource("6")
+
+[node name="Saturn" type="Sprite2D" parent="Panel/Planets"]
+position = Vector2(89, 445)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("8")
+
+[node name="Jupiter" type="Sprite2D" parent="Panel/Planets"]
+position = Vector2(385, 287)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("7")
+
+[node name="Uranus" type="Sprite2D" parent="Panel/Planets"]
+position = Vector2(279, 445)
+scale = Vector2(0.193, 0.193)
+texture = ExtResource("9")
+
+[node name="Neptune" type="Sprite2D" parent="Panel/Planets"]
+position = Vector2(463, 445)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("10")
+
+[node name="Merucry_Button" type="Button" parent="Panel"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 39.0
+offset_top = 111.0
+offset_right = 139.0
+offset_bottom = 201.0
+script = ExtResource("13_cf51m")
+
+[node name="Venus_Button" type="Button" parent="Panel"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 234.0
+offset_top = 114.0
+offset_right = 324.0
+offset_bottom = 204.0
+script = ExtResource("14_058qo")
+
+[node name="Earth_Button" type="Button" parent="Panel"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 415.0
+offset_top = 101.0
+offset_right = 519.0
+offset_bottom = 206.0
+script = ExtResource("15_rf1ne")
+
+[node name="Mars_Button" type="Button" parent="Panel"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 125.0
+offset_top = 230.0
+offset_right = 248.0
+offset_bottom = 350.0
+script = ExtResource("16_7e12p")
+
+[node name="Jupiter_Button" type="Button" parent="Panel"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 315.0
+offset_top = 231.0
+offset_right = 451.0
+offset_bottom = 341.0
+script = ExtResource("17_xxmyl")
+
+[node name="Saturn_Button" type="Button" parent="Panel"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 21.0
+offset_top = 404.0
+offset_right = 158.0
+offset_bottom = 489.0
+script = ExtResource("18_6y874")
+
+[node name="Uranus_Button" type="Button" parent="Panel"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 230.0
+offset_top = 399.0
+offset_right = 327.0
+offset_bottom = 489.0
+script = ExtResource("19_fvi6b")
+
+[node name="Neptune_Button" type="Button" parent="Panel"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 402.0
+offset_top = 392.0
+offset_right = 532.0
+offset_bottom = 500.0
+script = ExtResource("20_gg6qn")
+
+[node name="Panel_Anim" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_ia4om")
+}
+
+[connection signal="pressed" from="Panel/Reset_Sun" to="Panel/Reset_Sun" method="_on_pressed"]
+[connection signal="pressed" from="Panel/Merucry_Button" to="Panel/Merucry_Button" method="_on_pressed"]
+[connection signal="pressed" from="Panel/Venus_Button" to="Panel/Venus_Button" method="_on_pressed"]
+[connection signal="pressed" from="Panel/Earth_Button" to="Panel/Earth_Button" method="_on_pressed"]
+[connection signal="pressed" from="Panel/Mars_Button" to="Panel/Mars_Button" method="_on_pressed"]
+[connection signal="pressed" from="Panel/Jupiter_Button" to="Panel/Jupiter_Button" method="_on_pressed"]
+[connection signal="pressed" from="Panel/Saturn_Button" to="Panel/Saturn_Button" method="_on_pressed"]
+[connection signal="pressed" from="Panel/Uranus_Button" to="Panel/Uranus_Button" method="_on_pressed"]
+[connection signal="pressed" from="Panel/Neptune_Button" to="Panel/Neptune_Button" method="_on_pressed"]

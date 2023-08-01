@@ -1,0 +1,210 @@
+[gd_scene load_steps=42 format=3 uid="uid://2qaf2gagfskw"]
+
+[ext_resource type="PackedScene" uid="uid://dlfkx4tvx80b" path="res://Scenes/Earth.tscn" id="1"]
+[ext_resource type="PackedScene" uid="uid://btnyc70tax1fs" path="res://Scenes/Mercury.tscn" id="2"]
+[ext_resource type="Script" path="res://Scripts/Diagram.gd" id="3"]
+[ext_resource type="Script" path="res://Scenes/Sun_Cam.gd" id="4_ckqra"]
+[ext_resource type="PackedScene" uid="uid://bnh6a0xqiqd2g" path="res://Scenes/Venus.tscn" id="5"]
+[ext_resource type="Script" path="res://Scenes/Mercury_Cam.gd" id="5_tb5s2"]
+[ext_resource type="Script" path="res://Scenes/mercury_base.gd" id="5_x73mt"]
+[ext_resource type="PackedScene" uid="uid://ccv8nmsdnjw43" path="res://Scenes/Saturn.tscn" id="6"]
+[ext_resource type="PackedScene" uid="uid://bx2fw1cbcujn4" path="res://Scenes/Uranus.tscn" id="7"]
+[ext_resource type="PackedScene" uid="uid://tngwalpq7yec" path="res://Scenes/Jupiter.tscn" id="8"]
+[ext_resource type="Script" path="res://Scenes/venus_base.gd" id="8_tnswo"]
+[ext_resource type="PackedScene" uid="uid://b1vbyl7r8fvrr" path="res://Scenes/Sun.tscn" id="9"]
+[ext_resource type="Script" path="res://Scenes/Venus_Cam.gd" id="9_3xw8a"]
+[ext_resource type="PackedScene" uid="uid://brukurx3qemae" path="res://Scenes/Mars.tscn" id="10"]
+[ext_resource type="PackedScene" uid="uid://de6jqsxcdbyuf" path="res://Scenes/Neptune.tscn" id="11"]
+[ext_resource type="Script" path="res://Scenes/earth_base.gd" id="11_0ch6u"]
+[ext_resource type="Script" path="res://Scenes/Earth_Cam.gd" id="11_0hduv"]
+[ext_resource type="PackedScene" uid="uid://gt2vfmaf63yt" path="res://Scenes/PlanetMenu.tscn" id="12"]
+[ext_resource type="PackedScene" uid="uid://bs5ccqcuuoyjd" path="res://Scenes/Settings.tscn" id="13"]
+[ext_resource type="Script" path="res://Scenes/mars_base.gd" id="14_5u8eo"]
+[ext_resource type="PackedScene" uid="uid://bejfsym7if81x" path="res://Support/Mercury_Orbit.blend" id="14_bv6j4"]
+[ext_resource type="PackedScene" uid="uid://n87rba5tuptb" path="res://Support/Venus_Orbit.blend" id="15_16kxd"]
+[ext_resource type="Script" path="res://Scenes/Mars_Cam.gd" id="15_jjb0q"]
+[ext_resource type="PackedScene" uid="uid://cwqm28gakvnqt" path="res://Support/Earth_Orbit.blend" id="16_vmbx7"]
+[ext_resource type="Script" path="res://Scenes/jupiter_base.gd" id="17_2kdrk"]
+[ext_resource type="PackedScene" uid="uid://c75fg23h7lhox" path="res://Support/Mars_Orbit.blend" id="17_4k2vt"]
+[ext_resource type="PackedScene" uid="uid://civ23b7bce6im" path="res://Support/Jupiter_Orbit.blend" id="18_20gfq"]
+[ext_resource type="Script" path="res://Scenes/Jupiter_Cam.gd" id="18_e3n04"]
+[ext_resource type="PackedScene" uid="uid://deqicb4nvxu1v" path="res://Support/Saturn_Orbit.blend" id="19_0tmdw"]
+[ext_resource type="Script" path="res://Scenes/saturn_base.gd" id="20_188df"]
+[ext_resource type="PackedScene" uid="uid://h23hjl8r7c33" path="res://Support/Uranus_Orbit.blend" id="20_maq1j"]
+[ext_resource type="Script" path="res://Scenes/Saturn_Cam.gd" id="21_isg0m"]
+[ext_resource type="PackedScene" uid="uid://dbflgwadiwp42" path="res://Support/Neptune_Orbit.blend" id="21_kbg66"]
+[ext_resource type="Script" path="res://Scenes/uranus_base.gd" id="23_53biy"]
+[ext_resource type="Script" path="res://Scenes/Uranus_Cam.gd" id="24_b1nxk"]
+[ext_resource type="Script" path="res://Scenes/neptune_base.gd" id="26_k8w7w"]
+[ext_resource type="Script" path="res://Scenes/Neptune_Cam.gd" id="27_dyqr8"]
+[ext_resource type="Script" path="res://Scenes/Orbits.gd" id="30_f47sb"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_tvkek"]
+sky_top_color = Color(0.756863, 0.901961, 0.960784, 1)
+sky_horizon_color = Color(0.756863, 0.901961, 0.960784, 1)
+ground_bottom_color = Color(0.221311, 0.234907, 0.221743, 1)
+
+[sub_resource type="Sky" id="Sky_nthko"]
+sky_material = SubResource("ProceduralSkyMaterial_tvkek")
+
+[sub_resource type="Environment" id="Environment_aup80"]
+background_mode = 2
+sky = SubResource("Sky_nthko")
+glow_levels/5 = 16.0
+glow_levels/7 = 16.0
+glow_normalized = true
+glow_intensity = 3.66
+glow_strength = 1.15
+glow_blend_mode = 1
+
+[node name="Diagram" type="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.77831, 1.21584, 1.17618)
+script = ExtResource("3")
+
+[node name="Sun" parent="." instance=ExtResource("9")]
+
+[node name="sun_base" type="Node3D" parent="Sun"]
+
+[node name="Sun_Cam" type="Camera3D" parent="Sun/sun_base"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 1003.12, 0)
+far = 6000.0
+script = ExtResource("4_ckqra")
+camPath = NodePath(".")
+basePath = NodePath("..")
+
+[node name="Mercury" parent="." instance=ExtResource("2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 530, 0, 0)
+
+[node name="mercury_base" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 530, 0, 0)
+script = ExtResource("5_x73mt")
+
+[node name="Mercury_Cam" type="Camera3D" parent="mercury_base"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 11.1808, 0, 0)
+size = 0.001
+script = ExtResource("5_tb5s2")
+camPath = NodePath(".")
+basePath = NodePath("..")
+
+[node name="Venus" parent="." instance=ExtResource("5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 575, 0, 0)
+
+[node name="venus_base" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 575, 0, 0)
+script = ExtResource("8_tnswo")
+
+[node name="Venus_Cam" type="Camera3D" parent="venus_base"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 21.3775, 0, 0)
+script = ExtResource("9_3xw8a")
+camPath = NodePath(".")
+basePath = NodePath("..")
+
+[node name="Earth" parent="." instance=ExtResource("1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 610, 0, 0)
+
+[node name="earth_base" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 610, 0, 0)
+script = ExtResource("11_0ch6u")
+
+[node name="Earth_Cam" type="Camera3D" parent="earth_base"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 26.9642, 0, 0)
+script = ExtResource("11_0hduv")
+camPath = NodePath(".")
+basePath = NodePath("..")
+
+[node name="Mars" parent="." instance=ExtResource("10")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 690, 0, 0)
+
+[node name="mars_base" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 690, 0, 0)
+script = ExtResource("14_5u8eo")
+
+[node name="Mars_Cam" type="Camera3D" parent="mars_base"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 19.7448, 0, 0)
+script = ExtResource("15_jjb0q")
+camPath = NodePath(".")
+basePath = NodePath("..")
+
+[node name="Jupiter" parent="." instance=ExtResource("8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1000, 0, 0)
+
+[node name="jupiter_base" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1000, 0, 0)
+script = ExtResource("17_2kdrk")
+
+[node name="Jupiter_Cam" type="Camera3D" parent="jupiter_base"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 235.728, 0, 0)
+script = ExtResource("18_e3n04")
+camPath = NodePath(".")
+basePath = NodePath("..")
+
+[node name="Saturn" parent="." instance=ExtResource("6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1800, 0, 0)
+
+[node name="saturn_base" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1800, 0, 0)
+script = ExtResource("20_188df")
+
+[node name="Saturn_Cam" type="Camera3D" parent="saturn_base"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 343.385, 0, 0)
+script = ExtResource("21_isg0m")
+camPath = NodePath(".")
+basePath = NodePath("..")
+
+[node name="Uranus" parent="." instance=ExtResource("7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3600, 0, 0)
+
+[node name="uranus_base" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3600, 0, 0)
+script = ExtResource("23_53biy")
+
+[node name="Uranus_Cam" type="Camera3D" parent="uranus_base"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 97.5918, 0, 0)
+script = ExtResource("24_b1nxk")
+camPath = NodePath(".")
+basePath = NodePath("..")
+
+[node name="Neptune" parent="." instance=ExtResource("11")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5472, 0, 0)
+
+[node name="neptune_base" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5472, 0, 0)
+script = ExtResource("26_k8w7w")
+
+[node name="Neptune_Cam" type="Camera3D" parent="neptune_base"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 115.113, 0, 0)
+script = ExtResource("27_dyqr8")
+camPath = NodePath(".")
+basePath = NodePath("..")
+
+[node name="PlanetMenu" parent="." instance=ExtResource("12")]
+
+[node name="Settings" parent="." instance=ExtResource("13")]
+
+[node name="Sunlight" type="OmniLight3D" parent="."]
+light_energy = 2000.0
+omni_range = 8000.0
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_aup80")
+
+[node name="Orbits" type="Node3D" parent="."]
+script = ExtResource("30_f47sb")
+
+[node name="Mercury_Orbit" parent="Orbits" instance=ExtResource("14_bv6j4")]
+
+[node name="Venus_Orbit" parent="Orbits" instance=ExtResource("15_16kxd")]
+
+[node name="Earth_Orbit" parent="Orbits" instance=ExtResource("16_vmbx7")]
+
+[node name="Mars_Orbit" parent="Orbits" instance=ExtResource("17_4k2vt")]
+
+[node name="Jupiter_Orbit" parent="Orbits" instance=ExtResource("18_20gfq")]
+
+[node name="Saturn_Orbit" parent="Orbits" instance=ExtResource("19_0tmdw")]
+
+[node name="Uranus_Orbit" parent="Orbits" instance=ExtResource("20_maq1j")]
+
+[node name="Neptune_Orbit" parent="Orbits" instance=ExtResource("21_kbg66")]
+
+[connection signal="instantiated" from="Orbits" to="." method="instantiated"]

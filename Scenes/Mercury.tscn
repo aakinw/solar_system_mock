@@ -1,0 +1,21 @@
+[gd_scene load_steps=5 format=3 uid="uid://btnyc70tax1fs"]
+
+[ext_resource type="Script" path="res://Scripts/Mercury.gd" id="1"]
+[ext_resource type="Material" path="res://3D Assets/mercury/Material_002.material" id="2_nlkmw"]
+
+[sub_resource type="SphereShape3D" id="1"]
+radius = 5.0
+
+[sub_resource type="SphereMesh" id="2"]
+radius = 5.0
+height = 10.0
+
+[node name="Mercury" type="CharacterBody3D"]
+script = ExtResource("1")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("1")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("2")
+surface_material_override/0 = ExtResource("2_nlkmw")

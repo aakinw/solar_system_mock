@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://ccv8nmsdnjw43"]
+
+[ext_resource type="PackedScene" path="res://Scenes/Saturn_Assets.tscn" id="1"]
+[ext_resource type="Script" path="res://Scripts/Saturn.gd" id="2"]
+
+[sub_resource type="SphereShape3D" id="1"]
+radius = 119.0
+
+[node name="Saturn" type="CharacterBody3D"]
+script = ExtResource("2")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("1")
+
+[node name="scene" parent="." instance=ExtResource("1")]
+transform = Transform3D(0.197592, 0.0660793, 0.0262855, -0.0709085, 0.188982, 0.0579473, -0.0054208, -0.063399, 0.200128, -0.0817871, 3.8147e-06, 0.0423889)
