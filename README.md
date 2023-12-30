@@ -1,4 +1,4 @@
 # solar_system_mock
 
 
-HI MY NAME IS LANI
+Link to game: https://aakinw.itch.io/3d-solar-system-visual
